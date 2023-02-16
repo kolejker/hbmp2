@@ -1,0 +1,85 @@
+      /* Style for the sidebars */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        background: #333;
+        color: #fff;
+        transition: transform 0.5s ease-out;
+        transform: translateX(-200px);
+      }
+      .sidebar.right {
+        right: 0;
+        transform: translateX(100%);
+      }
+      .sidebar.left {
+        left: 0;
+        transform: translateX(-100%);
+      }
+      .sidebar.visible {
+        transform: translateX(0);
+      }
+      /* Style for the content */
+      .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+      /* Style for the album image */
+      .album-image {
+        width: 200px;
+        height: 200px;
+        background: #ddd;
+        border-radius: 50%;
+        margin: 50px 0;
+      }
+      /* Style for the song title */
+      .song-title {
+        margin: 0 0 25px 0;
+      }
+      /* Style for the seek bar */
+      .seek-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: 0 0 25px 0;
+      }
+      .current-time {
+        color: #333;
+        text-align: left;
+      }
+      .song-length {
+        color: #333;
+        text-align: right;
+      }
+      /* Style for the buttons */
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #333;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      .tooltip {
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 5px;
+  }
