@@ -1,32 +1,35 @@
 <html>
   <head>
     <title></title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+      <link href="https://fonts.googleapis.com/css?family=Figtree">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="sidebar right"></div>
-    <div class="sidebar left">
-      <ul id="playlist"></ul>
-      <input type="file" id="fileInput" multiple />
-      <button id="addSong">Add Song</button>
-      <button id="resetBtn">Reset list</button>
+
+<div class="sidebar left">
+        <div class="sidebar-buttons">
+  <h1>Songs</h1>
+  </div>
+  <div class="playlist-container">
+    <ul id="playlist"></ul>
+
+  </div>
+      <div class="sidebar-buttons">
+      <button id="resetBtn" class="circle-button">
+        <i class="fas fa-trash"></i>
+      </button>
+      <label for="fileInput" class="circle-button">
+        <i class="fas fa-plus"></i>
+      </label>
     </div>
+  <input type="file" id="fileInput" class="hidden" multiple />
+</div>
+
     <div class="content">
-      <div
-        class="album-cover"
-        style="
-          border-radius: 10px;
-          width: 300px;
-          height: 300px;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <img src="https://via.placeholder.com/300x300" alt="Album cover" />
+      <div class="album-cover">
+        <img src="https://via.placeholder.com/300x300" alt="Album cover" /></div>
         <div class="controls-container">
           <div class="seekbar-container">
             <input
@@ -38,19 +41,20 @@
               value="0"
             />
             <div class="buttons-container">
-              <button id="shuffleButton" class="circle-button">
-                <i class="material-icons">shuffle</i>
+              <button id="shuffleButton" class="evensmaller-button">
+                <i class="fas fa-random"></i>
               </button>
-              <button id="prevButton" class="circle-button">
-                <i class="material-icons">skip_previous</i>
+              <button id="prevButton" class="smaller-button">
+                <i class="fas fa-step-backward"></i>
               </button>
-              <button id="play-pause" class="circle-button">►</button>
-              <button id="nextButton" class="circle-button">
-                <i class="material-icons">skip_next</i>
-              </button>
-              <button id="loopButton" class="circle-button">
-                <i class="material-icons">repeat</i>
-              </button>
+              <button id="play-pause" class="circle-button">❚❚</button>
+             </button>
+<button id="nextButton" class="smaller-button">
+  <i class="fas fa-step-forward"></i>
+</button>
+<button id="loopButton" class="evensmaller-button">
+  <i class="fas fa-redo"></i>
+</button>
             </div>
           </div>
         </div>
@@ -75,8 +79,10 @@
       });
     </script>
     <script src="player.js"></script>
+    <script src="vis.js"></script>
     <div id="content">
       <canvas id="canvas"></canvas>
     </div>
+    <canvas id="vis"></canvas>
   </body>
 </html>

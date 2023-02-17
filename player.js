@@ -53,7 +53,7 @@ playPauseButton.addEventListener("click", function () {
   }
 });
 
-addSongBtn.onclick = function () {
+fileInput.addEventListener("change", () => {
   const files = fileInput.files;
   if (!files.length) {
     return;
@@ -63,16 +63,37 @@ addSongBtn.onclick = function () {
     const reader = new FileReader();
     reader.onload = function () {
       const data = reader.result;
+      const name = file.name;
+      const artist = getArtist(data);
+      const title = getTitle(data);
       const transaction = db.transaction(["songs"], "readwrite");
       const objectStore = transaction.objectStore("songs");
-      const request = objectStore.add({ name: file.name, data });
+      const request = objectStore.add({ name, artist, title, data });
       request.onsuccess = function () {
         renderPlaylist();
       };
+      audioPlayer.src = data;
+      audioPlayer.play();
     };
     reader.readAsDataURL(file);
   }
-};
+});
+
+function getArtist(data) {
+  const audio = new Audio();
+  audio.src = data;
+  const artist = audio.metadata?.artist?.[0] || "";
+  audio.src = "";
+  return artist;
+}
+
+function getTitle(data) {
+  const audio = new Audio();
+  audio.src = data;
+  const title = audio.metadata?.title || "";
+  audio.src = "";
+  return title;
+}
 
 audioPlayer.addEventListener("ended", function () {
   const nextSong = getNextSong();
@@ -137,9 +158,7 @@ function getNextSong() {
 
 const shuffleButton = document.getElementById("shuffleButton");
 
-function updateShuffleButton() {
-  shuffleButton.textContent = `shuffle:${shuffle ? "on" : "off"}`;
-}
+function updateShuffleButton() {}
 
 shuffleButton.addEventListener("click", function () {
   shuffle = !shuffle;
@@ -216,3 +235,6 @@ function getPreviousSong() {
 
   return songs[currentSongIndex - 1];
 }
+
+const li = document.createElement("li");
+li.innerHTML = `${song.name} - ${song.artist} - ${song.title}`;
