@@ -1,27 +1,25 @@
-      /* Style for the sidebars */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 200px;
-        background: #333;
-        color: #fff;
-        transition: transform 0.5s ease-out;
-        transform: translateX(-200px);
-      }
-      .sidebar.right {
-        right: 0;
-        transform: translateX(100%);
-      }
-      .sidebar.left {
-        left: 0;
-        transform: translateX(-100%);
-      }
-      .sidebar.visible {
-        transform: translateX(0);
-      }
-      /* Style for the content */
-      .content {
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background: #333;
+  color: #fff;
+  transition: transform 0.5s ease-out;
+  transform: translateX(-200px);
+}
+.sidebar.right {
+  right: 0;
+  transform: translateX(100%);
+}
+.sidebar.left {
+  left: 0;
+  transform: translateX(-100%);
+}
+.sidebar.visible {
+  transform: translateX(0);
+}
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,55 +29,78 @@
   align-items: center;
 }
 
-      /* Style for the album image */
-      .album-image {
-        width: 200px;
-        height: 200px;
-        background: #ddd;
-        border-radius: 50%;
-        margin: 50px 0;
-      }
-      /* Style for the song title */
-      .song-title {
-        margin: 0 0 25px 0;
-      }
-      /* Style for the seek bar */
-      .seek-bar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        margin: 0 0 25px 0;
-      }
-      .current-time {
-        color: #333;
-        text-align: left;
-      }
-      .song-length {
-        color: #333;
-        text-align: right;
-      }
-      /* Style for the buttons */
-      .buttons {
-        display: flex;
-        justify-content: center;
-      }
-      .button {
-        width: 50px;
-        height: 50px;
-        border: 1px solid #333;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 10px;
-        cursor: pointer;
-      }
+.album-cover {
+  width: 300px;
+  height: 300px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+}
 
-      .tooltip {
-    display: none;
-    position: absolute;
-    background-color: yellow;
-    padding: 5px;
-    border-radius: 5px;
-  }
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.circle-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #0000003a;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#prevButton {
+  background-image: url("prev_icon.png");
+}
+
+#nextButton {
+  background-image: url("next_icon.png");
+}
+
+#loopButton {
+  background-image: url("loop_icon.png");
+}
+
+#shuffleButton {
+  background-image: url("shuffle_icon.png");
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.seekbar-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#seekBar {
+  width: 100%;
+}
+
+#audioPlayer {
+  display: none;
+}

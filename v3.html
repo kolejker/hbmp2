@@ -1,113 +1,11 @@
 <html>
   <head>
     <title></title>
-
-    <style>
-      /* Style for the sidebars */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 200px;
-        background: #333;
-        color: #fff;
-        transition: transform 0.5s ease-out;
-        transform: translateX(-200px);
-      }
-      .sidebar.right {
-        right: 0;
-        transform: translateX(100%);
-      }
-      .sidebar.left {
-        left: 0;
-        transform: translateX(-100%);
-      }
-      .sidebar.visible {
-        transform: translateX(0);
-      }
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .album-image {
-        width: 200px;
-        height: 200px;
-        background: #ddd;
-        border-radius: 50%;
-        margin: 50px 0;
-      }
-
-      .tooltip {
-        display: none;
-        position: absolute;
-        background-color: yellow;
-        padding: 5px;
-        border-radius: 5px;
-      }
-
-.circle-button {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 0;
-  background-color: #ccc;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
-  border: none;
-  margin: 5px;
-  cursor: pointer;
-}
-
-#play-pause {
-  background-image: url('play_pause_icon.png');
-}
-
-#prevButton {
-  background-image: url('prev_icon.png');
-}
-
-#nextButton {
-  background-image: url('next_icon.png');
-}
-
-#loopButton {
-  background-image: url('loop_icon.png');
-}
-
-#shuffleButton {
-  background-image: url('shuffle_icon.png');
-}
-
-.controls-container {
-  position: absolute;
-  margin: auto;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#seekBar {
-  width: 100%;
-  margin: 0 10px;
-}
-
-
-
-    </style>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="sidebar right"></div>
@@ -117,29 +15,48 @@
       <button id="addSong">Add Song</button>
       <button id="resetBtn">Reset list</button>
     </div>
-    <div id="player">
-      <audio id="audioPlayer" controls></audio>
-      <div class="content">
-        <div
-          class="album-cover"
-          style="border-radius: 10px; width: 300px; height: 300px"
-        >
-          <img src="https://via.placeholder.com/300x300" alt="Album cover" />
+    <div class="content">
+      <div
+        class="album-cover"
+        style="
+          border-radius: 10px;
+          width: 300px;
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <img src="https://via.placeholder.com/300x300" alt="Album cover" />
+        <div class="controls-container">
+          <div class="seekbar-container">
+            <input
+              type="range"
+              id="seekBar"
+              min="0"
+              max="100"
+              step="0.01"
+              value="0"
+            />
+            <div class="buttons-container">
+              <button id="shuffleButton" class="circle-button">
+                <i class="material-icons">shuffle</i>
+              </button>
+              <button id="prevButton" class="circle-button">
+                <i class="material-icons">skip_previous</i>
+              </button>
+              <button id="play-pause" class="circle-button">►</button>
+              <button id="nextButton" class="circle-button">
+                <i class="material-icons">skip_next</i>
+              </button>
+              <button id="loopButton" class="circle-button">
+                <i class="material-icons">repeat</i>
+              </button>
+            </div>
+          </div>
         </div>
-    <div>
-<div class="controls-container">
-  <input type="range" id="seekBar" min="0" max="100" step="0.01" value="0" />
-  <div class="buttons-container">
-        <button id="shuffleButton" class="circle-button"></button>
-    <button id="prevButton" class="circle-button"></button>
-
-    <button id="play-pause" class="circle-button"></button>
-        <button id="nextButton" class="circle-button"></button>
-    <button id="loopButton" class="circle-button"></button>
-
-  </div>
-</div>
-        <audio id="audioPlayer"></audio>
+      </div>
+      <div>
+        <audio id="audioPlayer" controls="false"></audio>
       </div>
     </div>
     <script>
