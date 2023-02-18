@@ -238,3 +238,8 @@ function getPreviousSong() {
 
 const li = document.createElement("li");
 li.innerHTML = `${song.name} - ${song.artist} - ${song.title}`;
+
+const volumeBar = document.getElementById("volumeBar");
+volumeBar.addEventListener("input", function () {
+  audioPlayer.volume = volumeBar.value;
+});

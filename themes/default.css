@@ -136,7 +136,7 @@ canvas {
 }
 
 body {
-  background-image: url("background.png");
+  background-image: url("img/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -267,4 +267,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#volumeControl {
+  margin-top: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+#volumeBar {
+  width: 80%;
+  vertical-align: middle;
 }

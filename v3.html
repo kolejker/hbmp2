@@ -3,10 +3,23 @@
     <title></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
       <link href="https://fonts.googleapis.com/css?family=Figtree">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="themes/default.css" />
   </head>
   <body>
-    <div class="sidebar right"></div>
+    <div class="sidebar right">
+       <div id="volumeControl">
+    <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+       <select id="style-selector">
+      <option value="themes/default.css">Default Style</option>
+      <option value="themes/custom1.css">Custom Style 1</option>
+      <option value="themes/custom2.css">Custom Style 2</option>
+    </select>
+    <button onclick="changeStyle()">Apply Style</button>
+    <br /><br />
+    <input type="file" id="file-input" accept=".css" />
+    <button onclick="importCustomStyle()">Import Custom Style</button>
+  </div>
+    </div>
 
 <div class="sidebar left">
         <div class="sidebar-buttons">
@@ -79,6 +92,7 @@
       });
     </script>
     <script src="player.js"></script>
+        <script src="themes.js"></script>
     <script src="vis.js"></script>
     <div id="content">
       <canvas id="canvas"></canvas>

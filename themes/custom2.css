@@ -1,0 +1,18 @@
+body {
+  background-color: #ffa07a;
+  color: #333333;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  font-style: italic;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 0 10%;
+  text-align: center;
+}
