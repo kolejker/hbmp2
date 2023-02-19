@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 340px;
+  background-color: #252525;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  font-size: 20px;
+  background-color: #474747;
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  text-decoration: none;
+}
+
+.sidebar a.bottom {
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  height: 100%;
+  background-color: #474747;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+#playlist {
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+}
+
+#playlist li {
+  margin-right: 30px;
+  cursor: pointer;
+  color: #ffffff;
+  border: 1px solid #1a1a1a;
+  padding: 10px;
+}
+
+.playlist-container {
+  height: calc(100vh - 200px);
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #252525;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff1c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff49;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.sidebar-buttons {
+  background-color: rgba(80, 80, 80, 0.452);
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 23px;
+}
+
+.sidebar-buttons label {
+  background-color: #ffffff3a;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 50px;
+}
+.circle-button {
+  border-radius: 50%;
+  width: 50px;
+  font-size: 30px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #ffffff3a;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

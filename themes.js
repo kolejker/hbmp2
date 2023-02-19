@@ -1,4 +1,12 @@
 function changeStyle() {
+  // remove existing styles
+  var existingStyles = document.querySelectorAll(
+    "link[rel='stylesheet'], style"
+  );
+  existingStyles.forEach(function (style) {
+    style.remove();
+  });
+
   var styleSelector = document.getElementById("style-selector");
   var selectedStyle = styleSelector.value;
   if (selectedStyle) {
