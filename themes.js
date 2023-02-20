@@ -1,15 +1,21 @@
 function changeStyle() {
-  // remove existing styles
-  var existingStyles = document.querySelectorAll(
-    "link[rel='stylesheet'], style"
-  );
-  existingStyles.forEach(function (style) {
-    style.remove();
-  });
-
   var styleSelector = document.getElementById("style-selector");
   var selectedStyle = styleSelector.value;
+
+  var overrideCheckbox = document.getElementById("override-checkbox");
+  var overrideStyles = overrideCheckbox.checked;
+
   if (selectedStyle) {
+    // remove existing styles if override is selected
+    if (overrideStyles) {
+      var existingStyles = document.querySelectorAll(
+        "link[rel='stylesheet'], style"
+      );
+      existingStyles.forEach(function (style) {
+        style.remove();
+      });
+    }
+
     var newStyle = document.createElement("link");
     newStyle.setAttribute("rel", "stylesheet");
     newStyle.setAttribute("type", "text/css");
