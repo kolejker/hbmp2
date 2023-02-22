@@ -1,0 +1,407 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+}
+
+.leftnav {
+  height: 100%;
+  width: 340px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+.rightnav {
+  height: 100%;
+  width: 340px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+.topbars {
+  background-color: #111;
+  display: block;
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+  display: block;
+  width: 320px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+}
+
+.botbars {
+  background-color: #111;
+  display: block;
+  color: rgb(255, 255, 255);
+  display: block;
+  width: 340px;
+  position: fixed;
+  bottom: 0;
+}
+
+#playlist {
+  margin-top: 90px;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 0%;
+}
+
+#playlist li {
+  margin-left: -40px;
+  padding: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  width: 285px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-container {
+  overflow-y: scroll;
+}
+
+li:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+li:nth-child(odd) {
+  background-color: #242424;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.circle-button {
+  border-radius: 50%;
+  width: 50px;
+  font-size: 30px;
+  height: 50px;
+  background-color: #111;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#delete {
+  background-image: url("icons/trash.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#add {
+  background-image: url("icons/add.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#edit {
+  background-image: url("icons/edit.png");
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 700px;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+}
+
+#searchBarContainer {
+  display: none;
+}
+
+#searchTitle {
+  cursor: pointer;
+}
+
+#searchTitle:hover {
+  text-decoration: underline;
+}
+
+#searchBar {
+  background-color: #111;
+  color: rgb(255, 255, 255);
+  width: 80%;
+  margin: 35px 0;
+
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+#searchBar:focus {
+  outline: none;
+}
+
+#searchCloseButton {
+  padding: 10px 18px;
+  border-radius: 5px;
+  background-color: #111;
+  border: none;
+  cursor: pointer;
+  background-image: url("icons/close.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#settmenu {
+  background-color: #111;
+  list-style-type: none;
+  padding: 0;
+
+  margin: 0;
+}
+
+#settmenu li a {
+  padding: 12px;
+  background-color: #111;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+
+#settmenu li a:hover {
+  background-color: #111;
+}
+
+.button {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #222;
+  color: #fff;
+  width: 95%;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+input {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #222;
+  width: 95%;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+}
+
+input:focus {
+  outline: none;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  margin: 5px;
+}
+
+input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+}
+
+label[for="override-checkbox"] {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+select {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #222;
+  color: #fff;
+  width: 95%;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select:hover {
+  background: #202020;
+}
+
+option:hover {
+  background: #e6e6e6;
+}
+
+option:checked {
+  background: #0077ff;
+  color: #fff;
+}
+
+select:focus {
+  outline: none;
+}
+
+.undertext {
+  color: #5c5c5c;
+}
+
+#optionlist {
+  margin-top: 90px;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 0%;
+  background-color: #5c5c5c;
+}
+
+#optionlist li {
+  margin-left: -40px;
+  cursor: pointer;
+  width: 285px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.optionlist-container {
+  overflow: auto;
+  background-color: #383838;
+  overflow-y: scroll;
+  max-height: 800px;
+}
+
+#center {
+  text-align: center;
+}
+
+#play-pause {
+  width: 45px;
+  height: 45px;
+  font-size: 0px;
+  background-image: url(icons/play.png);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#play-pause.playing {
+  background-image: url(icons/pause.png);
+}
+
+#nextbutton {
+  width: 30px;
+  height: 30px;
+  background-image: url(icons/next.png);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#prevbutton {
+  width: 30px;
+  height: 30px;
+  background-image: url(icons/prev.png);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#shuffleButton {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url(shuffle-off.png);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#loopButton {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url(repeat-off.png);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seekbar-container {
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff98;
+}
+
+#pausecantcode {
+  background-image: url(icons/pause.png);
+}

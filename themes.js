@@ -6,7 +6,6 @@ function changeStyle() {
   var overrideStyles = overrideCheckbox.checked;
 
   if (selectedStyle) {
-    // remove existing styles if override is selected
     if (overrideStyles) {
       var existingStyles = document.querySelectorAll(
         "link[rel='stylesheet'], style"

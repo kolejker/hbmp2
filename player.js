@@ -46,10 +46,10 @@ function renderPlaylist() {
 playPauseButton.addEventListener("click", function () {
   if (audioPlayer.paused) {
     audioPlayer.play();
-    playPauseButton.textContent = "❚❚";
+    playPauseButton.style.backgroundImage = "url(icons/pause.png)";
   } else {
     audioPlayer.pause();
-    playPauseButton.textContent = "►";
+    playPauseButton.style.backgroundImage = "url(icons/play.png)";
   }
 });
 
@@ -188,10 +188,10 @@ audioPlayer.addEventListener("play", function () {
 const loopButton = document.getElementById("loopButton");
 loopButton.addEventListener("click", function () {
   audioPlayer.loop = !audioPlayer.loop;
-  if (audioPlayer.loop) {
-    loopButton.textContent = "Stop loop";
+  if (loop) {
+    loopButton.style.backgroundImage = "url(icons/repeaton.png)";
   } else {
-    loopButton.textContent = "Play on loop";
+    loopButton.style.backgroundImage = "url(icons/repeatoff.png)";
   }
 });
 
@@ -243,3 +243,33 @@ const volumeBar = document.getElementById("volumeBar");
 volumeBar.addEventListener("input", function () {
   audioPlayer.volume = volumeBar.value;
 });
+
+playPauseButton.addEventListener("click", function () {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playPauseButton.classList.add("playing");
+  } else {
+    audioPlayer.pause();
+    playPauseButton.classList.remove("playing");
+  }
+});
+
+shuffleButton.addEventListener("click", function () {
+  shuffle = !shuffle;
+  updateShuffleButton();
+});
+
+loopButton.addEventListener("click", function () {
+  loop = !loop;
+  updateLoopButton();
+});
+
+function updateShuffleButton() {
+  if (shuffle) {
+    shuffleButton.style.backgroundImage = "url(icons/shuffleon.png)";
+  } else {
+    shuffleButton.style.backgroundImage = "url(icons/shuffleoff.png)";
+  }
+}
+
+function updateLoopButton() {}
