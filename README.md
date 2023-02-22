@@ -3,7 +3,7 @@
 ## About
 HTML, CSS and JS Based music player. Feature requests and any type of help is apreciated.
 ## Features
-
+ - Metadata Detection
  - Customizable with CSS file
  - Works offline
  - Supports most types of audio files (and even some videos)
