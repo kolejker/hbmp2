@@ -15,6 +15,7 @@ HTML, CSS and JS Based music player. Feature requests and any type of help is ap
  - Start making client branch
  - Add every setting feature
  - Clean code
+ - Add Visualizer
  
  ## Website to do
  
